@@ -3,11 +3,10 @@
 namespace Kondrashov\Zoo\Notification;
 
 use Kondrashov\Zoo\Enclosure\Enclosure;
-use SplSubject;
 
 class AddAnimalNotification implements \SplObserver
 {
-	public function update(SplSubject $subject, ?string $eventName = null, array $data = []): void
+	public function update(\SplSubject $subject, ?string $eventName = null, array $data = []): void
 	{
 		if (
 			!($subject instanceof Enclosure)
@@ -25,6 +24,6 @@ class AddAnimalNotification implements \SplObserver
 		$animal = $data['animal'];
 		$animalName = ($animal->getName()) ?: 'New animal';
 
-		echo "{$animalName} has a new house!" . PHP_EOL;
+		echo "$animalName has a new house!" . PHP_EOL;
 	}
 }

@@ -12,7 +12,7 @@ class Animal implements Feedable
 	private ?int $age = null;
 
 	public function __construct(
-		private AnimalType $type,
+		private readonly AnimalType $type,
 		private array $personalConditions,
 		private array $allowedFood,
 	)
