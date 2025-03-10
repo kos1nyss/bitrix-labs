@@ -12,20 +12,19 @@ use RuntimeException;
 
 class Enclosure implements Feedable
 {
-	private AnimalCollection $animals;
+	private AnimalCollection $animalCollection;
 
 	public function __construct(
 		private array $conditions = [],
 	)
 	{
-		$this->animals = new AnimalCollection();
+		$this->animalCollection = new AnimalCollection();
 	}
 
 	public function feed(array $food): void
 	{
-		foreach ($this->getAnimals() as $animal)
+		foreach ($this->getAnimalCollection() as $animal)
 		{
-			var_dump($animal->getName());
 			if (!$animal->canEat($food))
 			{
 				continue;
@@ -38,9 +37,9 @@ class Enclosure implements Feedable
 	/**
 	 * @return AnimalCollection
 	 */
-	public function getAnimals(): AnimalCollection
+	public function getAnimalCollection(): AnimalCollection
 	{
-		return $this->animals;
+		return $this->animalCollection;
 	}
 
 	public function addAnimal(Animal $animal): bool
@@ -50,12 +49,12 @@ class Enclosure implements Feedable
 			throw new RuntimeException('Animal can\'t be added');
 		}
 
-		if ($this->animals->isExists($animal))
+		if ($this->animalCollection->isExists($animal))
 		{
 			return false;
 		}
 
-		$this->animals->add($animal);
+		$this->animalCollection[] = $animal;
 		EventManager::getInstance()->runEvent(
 			EventCode::ADD_ANIMAL,
 			[
