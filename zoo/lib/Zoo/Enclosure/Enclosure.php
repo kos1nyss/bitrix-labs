@@ -5,24 +5,27 @@ namespace Kondrashov\Zoo\Enclosure;
 use Kondrashov\Event\EventCode;
 use Kondrashov\Event\EventManager;
 use Kondrashov\Zoo\Animal\Animal;
+use Kondrashov\Zoo\Animal\AnimalCollection;
 use Kondrashov\Zoo\Feedable;
 
 use RuntimeException;
 
 class Enclosure implements Feedable
 {
-	private array $animals = [];
+	private AnimalCollection $animals;
 
 	public function __construct(
-		private array $conditions,
+		private array $conditions = [],
 	)
 	{
+		$this->animals = new AnimalCollection();
 	}
 
 	public function feed(array $food): void
 	{
 		foreach ($this->getAnimals() as $animal)
 		{
+			var_dump($animal->getName());
 			if (!$animal->canEat($food))
 			{
 				continue;
@@ -33,26 +36,26 @@ class Enclosure implements Feedable
 	}
 
 	/**
-	 * @return Animal[]
+	 * @return AnimalCollection
 	 */
-	public function getAnimals(): array
+	public function getAnimals(): AnimalCollection
 	{
 		return $this->animals;
 	}
 
 	public function addAnimal(Animal $animal): bool
 	{
-		if (!$this->canAnimalKept($animal))
+		if (!$this->canKeptAnimal($animal))
 		{
 			throw new RuntimeException('Animal can\'t be added');
 		}
 
-		if (in_array($animal, $this->getAnimals(), true))
+		if ($this->animals->isExists($animal))
 		{
 			return false;
 		}
 
-		$this->animals[] = $animal;
+		$this->animals->add($animal);
 		EventManager::getInstance()->runEvent(
 			EventCode::ADD_ANIMAL,
 			[
@@ -63,7 +66,7 @@ class Enclosure implements Feedable
 		return true;
 	}
 
-	public function canAnimalKept(Animal $animal): bool
+	public function canKeptAnimal(Animal $animal): bool
 	{
 		return true;
 	}
