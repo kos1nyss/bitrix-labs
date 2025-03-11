@@ -4,7 +4,7 @@ namespace Kondrashov\Zoo\Excursion;
 
 use Kondrashov\Zoo\Zoo;
 
-class Excursion
+abstract class Excursion
 {
 	private array $members = [];
 
@@ -14,16 +14,16 @@ class Excursion
 	)
 	{}
 
-	public function run(): void
-	{
-		foreach ($this->getZoo()->getEnclosures() as $enclosure)
-		{
-		}
-	}
+	abstract public function run(): void;
 
 	public function getZoo(): Zoo
 	{
 		return $this->zoo;
+	}
+
+	public function getGuide(): Guide
+	{
+		return $this->guide;
 	}
 
 	public function addMember(Person $member): bool
