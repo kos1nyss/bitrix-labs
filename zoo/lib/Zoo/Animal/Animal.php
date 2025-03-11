@@ -3,9 +3,9 @@
 namespace Kondrashov\Zoo\Animal;
 
 use http\Exception\RuntimeException;
-use Kondrashov\Zoo\Feedable;
+use Kondrashov\Zoo\ZooLeaf;
 
-class Animal implements Feedable
+class Animal implements ZooLeaf
 {
 	private ?string $name = null;
 	private ?string $description = null;

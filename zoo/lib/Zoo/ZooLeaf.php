@@ -2,7 +2,7 @@
 
 namespace Kondrashov\Zoo;
 
-interface Feedable
+interface ZooLeaf
 {
 	public function feed(array $food);
 }

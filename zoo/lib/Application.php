@@ -23,10 +23,10 @@ class Application
 		$monkey = new Animal($monkeyType, [], ['meat']);
 		$monkey->setName('Luke');
 
-		$enclosure->addAnimal($monkey);
+		$enclosure->add($monkey);
 
 		$zoo = new Zoo('Kaliningrad Zoo');
-		$zoo->addEnclosure($enclosure);
+		$zoo->add($enclosure);
 
 		(new MeatFeeder())->execute($zoo);
 

@@ -4,7 +4,7 @@ namespace Kondrashov\Zoo;
 
 use Kondrashov\Zoo\Enclosure\Enclosure;
 
-class Zoo implements Feedable
+class Zoo implements ZooComponent
 {
 	private array $enclosures = [];
 
@@ -20,14 +20,14 @@ class Zoo implements Feedable
 		return $this->name;
 	}
 
-	public function addEnclosure(Enclosure $enclosure): bool
+	public function add(ZooLeaf $leaf): bool
 	{
-		if (in_array($enclosure, $this->getEnclosures(), true))
+		if (in_array($leaf, $this->getEnclosures(), true))
 		{
 			return false;
 		}
 
-		$this->enclosures[] = $enclosure;
+		$this->enclosures[] = $leaf;
 
 		return true;
 	}

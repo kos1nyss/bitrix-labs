@@ -4,12 +4,13 @@ namespace Kondrashov\Zoo\Enclosure;
 
 use Kondrashov\Zoo\Animal\Animal;
 use Kondrashov\Zoo\Animal\AnimalCollection;
-use Kondrashov\Zoo\Feedable;
 
+use Kondrashov\Zoo\ZooComponent;
+use Kondrashov\Zoo\ZooLeaf;
 use RuntimeException;
 use SplSubject;
 
-class Enclosure implements Feedable, SplSubject
+class Enclosure implements ZooComponent, SplSubject
 {
 	const string EVENT_ADD_ANIMAL = 'EVENT_ADD_ANIMAL';
 
@@ -45,23 +46,28 @@ class Enclosure implements Feedable, SplSubject
 		return $this->animalCollection;
 	}
 
-	public function addAnimal(Animal $animal): bool
+	public function add(ZooLeaf $leaf): bool
 	{
-		if (!$this->canKeptAnimal($animal))
-		{
-			throw new RuntimeException('Animal can\'t be added');
-		}
-
-		if ($this->animalCollection->isExists($animal))
+		if (!($leaf instanceof Animal))
 		{
 			return false;
 		}
 
-		$this->animalCollection[] = $animal;
+		if (!$this->canKeptAnimal($leaf))
+		{
+			throw new RuntimeException('Animal can\'t be added');
+		}
+
+		if ($this->animalCollection->isExists($leaf))
+		{
+			return false;
+		}
+
+		$this->animalCollection[] = $leaf;
 		$this->notify(
 			self::EVENT_ADD_ANIMAL,
 			[
-				'animal' => $animal,
+				'animal' => $leaf,
 			],
 		);
 
