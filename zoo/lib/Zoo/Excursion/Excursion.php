@@ -2,6 +2,7 @@
 
 namespace Kondrashov\Zoo\Excursion;
 
+use Kondrashov\Zoo\Excursion\Guide\Guide;
 use Kondrashov\Zoo\Zoo;
 
 abstract class Excursion

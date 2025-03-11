@@ -6,8 +6,10 @@ use Kondrashov\Zoo\Animal\Animal;
 use Kondrashov\Zoo\Animal\AnimalType;
 use Kondrashov\Zoo\Enclosure\Enclosure;
 use Kondrashov\Zoo\Excursion\Excursion;
-use Kondrashov\Zoo\Excursion\Guide;
+use Kondrashov\Zoo\Excursion\Guide\Guide;
+use Kondrashov\Zoo\Excursion\Guide\LoudGuide;
 use Kondrashov\Zoo\Excursion\Person;
+use Kondrashov\Zoo\Excursion\QuickExcursion;
 use Kondrashov\Zoo\Feeder\MeatFeeder;
 use Kondrashov\Zoo\Notification\AddAnimalNotification;
 use Kondrashov\Zoo\Zoo;
@@ -30,7 +32,7 @@ class Application
 
 		(new MeatFeeder())->execute($zoo);
 
-		$excursion = new Excursion($zoo, new Guide());
+		$excursion = new QuickExcursion($zoo, new LoudGuide());
 		$excursion->addMember(new Person());
 		$excursion->run();
 	}
