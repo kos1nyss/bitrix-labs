@@ -2,11 +2,11 @@
 
 namespace Kondrashov\Zoo\Feeder;
 
-use Kondrashov\Zoo\Zoo;
+use Kondrashov\Zoo\ZooLeaf;
 
 class MeatFeeder
 {
-	public function execute(Zoo $zoo): void
+	public function execute(ZooLeaf $zoo): void
 	{
 		$zoo->feed(['meat']);
 	}
