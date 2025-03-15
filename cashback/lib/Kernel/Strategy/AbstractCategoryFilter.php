@@ -14,7 +14,7 @@ abstract class AbstractCategoryFilter
 	}
 
 	abstract public function filterByPriority(
-		CategoryCollection $priorityCategoryCollection,
+		CategoryCollection $priorityCategories,
 		int $limit,
 	): ?CategoryCollection;
 
