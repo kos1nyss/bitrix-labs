@@ -1,6 +1,6 @@
 <?php
 
-namespace Kondrashov\Cashback\File;
+namespace Kondrashov\Cashback\File\CSV;
 
 use Kondrashov\Cashback\File\Reader\AbstractFileReader;
 

@@ -2,7 +2,7 @@
 
 namespace Kondrashov\Kernel\Entity;
 
-abstract class AbstractEntity
+abstract class AbstractEntity implements Arrayable
 {
 
 }

@@ -2,7 +2,7 @@
 
 namespace User;
 
-use Category\CategoryCollection;
+use Kondrashov\Cashback\Entity\Category\CategoryCollection;
 use Kondrashov\Kernel\Entity\AbstractEntity;
 
 class User extends AbstractEntity
@@ -14,6 +14,13 @@ class User extends AbstractEntity
 		$this->priorityCategoryCollection = $categoryCollection;
 
 		return $this;
+	}
+
+	public function toArray(): array
+	{
+		return [
+			'priorityCategory' => $this->getPriorityCategoryCollection()->toArray(),
+		];
 	}
 
 	public function getPriorityCategoryCollection(): CategoryCollection

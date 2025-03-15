@@ -4,15 +4,15 @@ namespace Kondrashov\Cashback\File\Reader;
 
 class FileContent
 {
-	private mixed $data;
+	private string $content = '';
 
-	public function __construct(mixed $data)
+	public function setContent(string $content): void
 	{
-		$this->data = $data;
+		$this->content = $content;
 	}
 
-	public function getData(): mixed
+	public function getContent(): string
 	{
-		return $this->data;
+		return $this->content;
 	}
 }

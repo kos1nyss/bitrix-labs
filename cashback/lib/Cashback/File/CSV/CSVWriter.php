@@ -1,9 +1,9 @@
 <?php
 
-namespace Kondrashov\Cashback\File;
+namespace Kondrashov\Cashback\File\CSV;
 
-use Kondrashov\Cashback\File\Reader\FileContent;
 use Kondrashov\Cashback\File\Reader\AbstractFileWriter;
+use Kondrashov\Cashback\File\Reader\FileContent;
 
 class CSVWriter extends AbstractFileWriter
 {

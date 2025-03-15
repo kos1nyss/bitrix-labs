@@ -2,7 +2,7 @@
 
 namespace Kondrashov\Kernel\Entity;
 
-class EntityCollection implements \IteratorAggregate, \ArrayAccess
+class EntityCollection implements \IteratorAggregate, \ArrayAccess, Arrayable
 {
 	public function __construct(
 		private array $entities = []
@@ -47,5 +47,17 @@ class EntityCollection implements \IteratorAggregate, \ArrayAccess
 	public function offsetUnset(mixed $offset): void
 	{
 		unset($this->entities[$offset]);
+	}
+
+	public function toArray(): array
+	{
+		$array = [];
+
+		foreach ($this->getEntities() as $entity)
+		{
+			$array[] = $entity->toArray();
+		}
+
+		return $array;
 	}
 }

@@ -2,14 +2,14 @@
 
 namespace Bank;
 
-use Category\CategoryCollection;
+use Kondrashov\Cashback\Entity\Category\CategoryCollection;
 use Kondrashov\Kernel\Entity\AbstractEntity;
 
 class Bank extends AbstractEntity
 {
 	private ?string $name;
 
-	private CategoryCollection $categoryCollection;
+	private CategoryCollection $monthCategoryCollection;
 
 	public function setName(string $name): self
 	{
@@ -18,20 +18,28 @@ class Bank extends AbstractEntity
 		return $this;
 	}
 
+	public function setMonthCategoryCollection(CategoryCollection $monthCategoryCollection): self
+	{
+		$this->monthCategoryCollection = $monthCategoryCollection;
+
+		return $this;
+	}
+
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->getName(),
+			'monthCategoryCollection' => $this->monthCategoryCollection->toArray(),
+		];
+	}
+
 	public function getName(): ?string
 	{
 		return $this->name;
 	}
 
-	public function setCategoryCollection(CategoryCollection $categoryCollection): self
+	public function getMonthCategoryCollection(): CategoryCollection
 	{
-		$this->categoryCollection = $categoryCollection;
-
-		return $this;
-	}
-
-	public function getCategoryCollection(): CategoryCollection
-	{
-		return $this->categoryCollection;
+		return $this->monthCategoryCollection;
 	}
 }

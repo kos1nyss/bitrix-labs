@@ -16,16 +16,24 @@ class Category extends AbstractEntity
 		return $this;
 	}
 
-	public function getName(): string
-	{
-		return $this->name;
-	}
-
 	public function setPercent(string $percent): self
 	{
 		$this->percent = $percent;
 
 		return $this;
+	}
+
+	public function toArray(): array
+	{
+		return [
+			'name' => $this->getName(),
+			'percent' => $this->getPercent(),
+		];
+	}
+
+	public function getName(): string
+	{
+		return $this->name;
 	}
 
 	public function getPercent(): ?int

@@ -1,12 +1,12 @@
 <?php
 
-namespace Kondrashov\Cashback\File;
+namespace Kondrashov\Cashback\File\CSV;
 
 use Kondrashov\Cashback\File\Reader\FileContent;
 
 class CSVContent extends FileContent
 {
-	public function getColumns(): array
+	public function getRows(): array
 	{
 		return [];
 	}

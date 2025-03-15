@@ -4,5 +4,5 @@ namespace Kondrashov\Cashback\File\Reader;
 
 abstract class AbstractFileWriter
 {
-	abstract function write(FileContent $value): void;
+	abstract public function write(FileContent $value): void;
 }
