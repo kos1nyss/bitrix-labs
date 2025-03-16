@@ -6,7 +6,10 @@ use Kondrashov\Cashback\App\Entity\Bank\Bank;
 use Kondrashov\Cashback\App\Entity\Category\Category;
 use Kondrashov\Cashback\App\Entity\Category\CategoryCollection;
 use Kondrashov\Cashback\App\Entity\User\User;
+use Kondrashov\Cashback\App\Factory\CategoryFactory;
 use Kondrashov\Cashback\App\Service\CategoryFilter\SimpleCategoryFilter;
+use Kondrashov\Cashback\App\Service\File\Export\CsvExporter;
+use Kondrashov\Cashback\App\Service\File\Import\CsvImporter;
 
 class Application
 {
@@ -54,5 +57,11 @@ class Application
 					3,
 				)
 		;
+
+		$csvExporter = new CsvExporter();
+		$csvExporter->export('filtered-categories.csv', $filteredCategories);
+
+		$csvImporter = new CsvImporter();
+		$otherCategories = $csvImporter->import('other-categories.csv', new CategoryFactory());
 	}
 }
