@@ -25,6 +25,14 @@ class User extends AbstractEntity
 		return $this;
 	}
 
+	public function toArray(): array
+	{
+		return [
+			'workingHours' => $this->getWorkingHours(),
+			'workingDays' => $this->getWorkingDays(),
+		];
+	}
+
 	public function getWorkingHours(): DatePeriod
 	{
 		return $this->workingHours;

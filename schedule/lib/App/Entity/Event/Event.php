@@ -16,6 +16,14 @@ class Event extends AbstractActivityEntity
 		return $this;
 	}
 
+	public function toArray(): array
+	{
+		return [
+			'datePeriod' => $this->getDatePeriod(),
+			...parent::toArray(),
+		];
+	}
+
 	public function getDatePeriod(): DatePeriod
 	{
 		return $this->datePeriod;

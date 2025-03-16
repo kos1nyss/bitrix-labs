@@ -2,6 +2,7 @@
 
 namespace Kondrashov\Schedule\Kernel\Entity;
 
-abstract class AbstractEntity implements Arrayable
+interface Arrayable
 {
+	public function toArray(): array;
 }

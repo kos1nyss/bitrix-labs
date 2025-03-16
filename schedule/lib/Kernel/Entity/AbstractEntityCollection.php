@@ -2,7 +2,7 @@
 
 namespace Kondrashov\Schedule\Kernel\Entity;
 
-abstract class AbstractEntityCollection implements \IteratorAggregate, \ArrayAccess
+abstract class AbstractEntityCollection implements \IteratorAggregate, \ArrayAccess, Arrayable
 {
 	public function __construct(
 		private array $entities = []

@@ -23,6 +23,14 @@ abstract class AbstractActivityEntity extends AbstractEntity
 		return $this;
 	}
 
+	public function toArray(): array
+	{
+		return [
+			'priority' => $this->getPriority(),
+			'name' => $this->getName(),
+		];
+	}
+
 	public function getPriority(): ?int
 	{
 		return $this->priority;
