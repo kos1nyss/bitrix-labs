@@ -2,7 +2,7 @@
 
 spl_autoload_register(function ($class)
 	{
-		$prefix = 'Kondrashov\\';
+		$prefix = 'Kondrashov\\Cashback';
 		$base_dir = __DIR__ . '/lib/';
 
 		$len = strlen($prefix);
@@ -19,6 +19,6 @@ spl_autoload_register(function ($class)
 	}
 );
 
-use Kondrashov\Application;
+use Kondrashov\Cashback\Application;
 
 Application::run();

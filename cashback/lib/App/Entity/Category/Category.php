@@ -1,13 +1,13 @@
 <?php
 
-namespace Category;
+namespace Kondrashov\Cashback\App\Entity\Category;
 
-use Kondrashov\Kernel\Entity\AbstractEntity;
+use Kondrashov\Cashback\Kernel\Entity\AbstractEntity;
 
 class Category extends AbstractEntity
 {
 	private string $name;
-	private ?int $percent;
+	private float $percent;
 
 	public function setName(string $name): self
 	{
@@ -16,7 +16,7 @@ class Category extends AbstractEntity
 		return $this;
 	}
 
-	public function setPercent(string $percent): self
+	public function setPercent(float $percent): self
 	{
 		$this->percent = $percent;
 
@@ -36,7 +36,7 @@ class Category extends AbstractEntity
 		return $this->name;
 	}
 
-	public function getPercent(): ?int
+	public function getPercent(): float
 	{
 		return $this->percent;
 	}

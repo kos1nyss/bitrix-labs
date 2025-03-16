@@ -1,6 +1,6 @@
 <?php
 
-namespace Kondrashov\Kernel\Entity;
+namespace Kondrashov\Cashback\Kernel\Entity;
 
 class EntityCollection implements \IteratorAggregate, \ArrayAccess, Arrayable
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Kondrashov\Kernel\Factory;
+namespace Kondrashov\Cashback\Kernel\Factory;
 
-use Kondrashov\Kernel\Entity\AbstractEntity;
-use Kondrashov\Kernel\Entity\EntityCollection;
+use Kondrashov\Cashback\Kernel\Entity\AbstractEntity;
+use Kondrashov\Cashback\Kernel\Entity\EntityCollection;
 
 abstract class AbstractEntityFactory
 {
