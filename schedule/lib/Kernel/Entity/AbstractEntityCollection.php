@@ -10,6 +10,11 @@ abstract class AbstractEntityCollection implements \IteratorAggregate, \ArrayAcc
 	{
 	}
 
+	public function getFirstItem(): ?AbstractEntity
+	{
+		return $this->entities[0] ?? null;
+	}
+
 	public function getIterator(): \Traversable
 	{
 		return new \ArrayIterator($this->getEntities());

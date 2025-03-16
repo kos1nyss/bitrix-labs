@@ -1,8 +1,8 @@
 <?php
 
-namespace Kondrashov\Schedule\Kernel\Entity;
+namespace Kondrashov\Schedule\App\Entity\Activity;
 
-use DateTime;
+use Kondrashov\Schedule\Kernel\Entity\AbstractEntity;
 
 abstract class AbstractActivityEntity extends AbstractEntity
 {

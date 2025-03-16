@@ -1,10 +1,9 @@
 <?php
 
-namespace Kondrashov\Schedule\App\Entity;
+namespace Kondrashov\Schedule\App\Entity\User;
 
-use DatePeriod;
-use DateTime;
 use Kondrashov\Schedule\Kernel\Entity\AbstractEntity;
+use Kondrashov\Schedule\Kernel\Entity\DatePeriod;
 
 class User extends AbstractEntity
 {

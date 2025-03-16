@@ -1,5 +1,7 @@
 <?php
 
+namespace Kondrashov\Schedule\Kernel\File;
+
 use Kondrashov\Schedule\Kernel\Entity\AbstractEntityCollection;
 use Kondrashov\Schedule\Kernel\Factory\AbstractEntityFactory;
 

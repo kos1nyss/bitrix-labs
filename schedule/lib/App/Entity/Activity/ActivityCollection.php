@@ -1,7 +1,9 @@
 <?php
 
-namespace Kondrashov\Schedule\Kernel\Entity;
+namespace Kondrashov\Schedule\App\Entity\Activity;
 
-abstract class ActivityCollection extends AbstractEntityCollection
+use Kondrashov\Schedule\Kernel\Entity\AbstractEntityCollection;
+
+class ActivityCollection extends AbstractEntityCollection
 {
 }

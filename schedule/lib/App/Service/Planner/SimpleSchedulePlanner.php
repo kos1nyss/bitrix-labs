@@ -1,12 +1,12 @@
 <?php
 
-namespace Kondrashov\Schedule\Kernel;
+namespace Kondrashov\Schedule\App\Service\Planner;
 
-use DatePeriod;
-use Kondrashov\Schedule\App\Entity\Schedule;
-use Kondrashov\Schedule\App\Entity\User;
-use Kondrashov\Schedule\Kernel\Entity\ActivityCollection;
-use Kondrashov\Schedule\Kernel\Entity\EventCollection;
+use Kondrashov\Schedule\App\Entity\Activity\ActivityCollection;
+use Kondrashov\Schedule\App\Entity\Event\EventCollection;
+use Kondrashov\Schedule\App\Entity\Schedule\Schedule;
+use Kondrashov\Schedule\App\Entity\User\User;
+use Kondrashov\Schedule\Kernel\Entity\DatePeriod;
 
 class SimpleSchedulePlanner extends AbstractSchedulePlanner
 {
@@ -19,7 +19,7 @@ class SimpleSchedulePlanner extends AbstractSchedulePlanner
 		return
 			(new Schedule())
 				->setDatePeriod($datePeriod)
-				->setEvents(new EventCollection(...[]))
+				->setEvents(new EventCollection())
 			;
 	}
 }

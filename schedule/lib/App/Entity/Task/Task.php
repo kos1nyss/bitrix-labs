@@ -1,9 +1,10 @@
 <?php
 
-namespace Kondrashov\Schedule\App\Entity;
+namespace Kondrashov\Schedule\App\Entity\Task;
 
-use DatePeriod;
-use Kondrashov\Schedule\Kernel\Entity\AbstractActivityEntity;
+use Kondrashov\Schedule\App\Entity\Activity\AbstractActivityEntity;
+use Kondrashov\Schedule\App\Entity\Event\Event;
+use Kondrashov\Schedule\Kernel\Entity\DatePeriod;
 
 class Task extends AbstractActivityEntity
 {

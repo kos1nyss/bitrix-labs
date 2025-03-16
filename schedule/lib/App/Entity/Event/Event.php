@@ -1,9 +1,9 @@
 <?php
 
-namespace Kondrashov\Schedule\App\Entity;
+namespace Kondrashov\Schedule\App\Entity\Event;
 
-use DatePeriod;
-use Kondrashov\Schedule\Kernel\Entity\AbstractActivityEntity;
+use Kondrashov\Schedule\App\Entity\Activity\AbstractActivityEntity;
+use Kondrashov\Schedule\Kernel\Entity\DatePeriod;
 
 class Event extends AbstractActivityEntity
 {
@@ -19,7 +19,7 @@ class Event extends AbstractActivityEntity
 	public function toArray(): array
 	{
 		return [
-			'datePeriod' => $this->getDatePeriod(),
+			'datePeriod' => $this->getDatePeriod()->toArray(),
 			...parent::toArray(),
 		];
 	}

@@ -1,5 +1,7 @@
 <?php
 
+use Kondrashov\Schedule\Application;
+
 spl_autoload_register(function ($class)
 	{
 		$prefix = 'Kondrashov\\Schedule';

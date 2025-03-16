@@ -1,10 +1,10 @@
 <?php
 
-namespace Kondrashov\Schedule\App\Entity;
+namespace Kondrashov\Schedule\App\Entity\Schedule;
 
-use DatePeriod;
+use Kondrashov\Schedule\App\Entity\Event\EventCollection;
 use Kondrashov\Schedule\Kernel\Entity\AbstractEntity;
-use Kondrashov\Schedule\Kernel\Entity\EventCollection;
+use Kondrashov\Schedule\Kernel\Entity\DatePeriod;
 
 class Schedule extends AbstractEntity
 {
@@ -29,7 +29,7 @@ class Schedule extends AbstractEntity
 	{
 		return [
 			'events' => $this->getEvents()->toArray(),
-			'datePeriod' => $this->getDatePeriod(),
+			'datePeriod' => $this->getDatePeriod()->toArray(),
 		];
 	}
 
