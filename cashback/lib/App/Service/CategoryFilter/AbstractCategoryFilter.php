@@ -1,8 +1,8 @@
 <?php
 
-namespace Bitrix\Kernel\Strategy;
+namespace Kondrashov\Cashback\App\Service\CategoryFilter;
 
-use Kondrashov\Cashback\Entity\Category\CategoryCollection;
+use Kondrashov\Cashback\App\Entity\Category\CategoryCollection;
 
 abstract class AbstractCategoryFilter
 {
@@ -14,8 +14,9 @@ abstract class AbstractCategoryFilter
 	}
 
 	abstract public function filterByPriority(
+		CategoryCollection $categoryCollection,
 		CategoryCollection $priorityCategories,
-		int $limit,
+		int  $limit,
 	): ?CategoryCollection;
 
 	public function getCategories(): CategoryCollection

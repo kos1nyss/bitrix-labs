@@ -1,9 +1,9 @@
 <?php
 
-namespace Bank;
+namespace Kondrashov\Cashback\App\Entity\Bank;
 
-use Kondrashov\Cashback\Entity\Category\CategoryCollection;
-use Kondrashov\Kernel\Entity\AbstractEntity;
+use Kondrashov\Cashback\App\Entity\Category\CategoryCollection;
+use Kondrashov\Cashback\Kernel\Entity\AbstractEntity;
 
 class Bank extends AbstractEntity
 {

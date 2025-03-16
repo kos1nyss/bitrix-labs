@@ -1,9 +1,9 @@
 <?php
 
-namespace User;
+namespace Kondrashov\Cashback\App\Entity\User;
 
-use Kondrashov\Cashback\Entity\Category\CategoryCollection;
-use Kondrashov\Kernel\Entity\AbstractEntity;
+use Kondrashov\Cashback\App\Entity\Category\CategoryCollection;
+use Kondrashov\Cashback\Kernel\Entity\AbstractEntity;
 
 class User extends AbstractEntity
 {
