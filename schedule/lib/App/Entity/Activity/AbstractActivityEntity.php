@@ -4,7 +4,7 @@ namespace Kondrashov\Schedule\Kernel\Entity;
 
 use DateTime;
 
-abstract class AbstractScheduleEntity extends AbstractEntity
+abstract class AbstractActivityEntity extends AbstractEntity
 {
 	private int $priority;
 	private string $name;

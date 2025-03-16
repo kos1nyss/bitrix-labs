@@ -2,7 +2,7 @@
 
 namespace Kondrashov\Schedule\Kernel\Entity;
 
-class EntityCollection implements \IteratorAggregate, \ArrayAccess
+abstract class AbstractEntityCollection implements \IteratorAggregate, \ArrayAccess
 {
 	public function __construct(
 		private array $entities = []
@@ -20,7 +20,7 @@ class EntityCollection implements \IteratorAggregate, \ArrayAccess
 		return in_array($entity, $this->getEntities(), true);
 	}
 
-	public function offsetGet(mixed $offset): mixed
+	public function offsetGet(mixed $offset): AbstractEntity
 	{
 		return $this->getEntities()()[$offset];
 	}
