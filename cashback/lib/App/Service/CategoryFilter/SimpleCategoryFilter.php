@@ -9,8 +9,8 @@ class SimpleCategoryFilter extends AbstractCategoryFilter
 	public function filterByPriority(
 		CategoryCollection $categoryCollection,
 		CategoryCollection $priorityCategories,
-		int  $limit,
-	): ?CategoryCollection
+		int $limit,
+	): CategoryCollection
 	{
 		return new CategoryCollection();
 	}

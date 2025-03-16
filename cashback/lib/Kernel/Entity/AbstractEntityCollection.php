@@ -2,7 +2,7 @@
 
 namespace Kondrashov\Cashback\Kernel\Entity;
 
-class EntityCollection implements \IteratorAggregate, \ArrayAccess, Arrayable
+class AbstractEntityCollection implements \IteratorAggregate, \ArrayAccess, Arrayable
 {
 	public function __construct(
 		private array $entities = []

@@ -6,7 +6,7 @@ use Kondrashov\Cashback\App\Entity\Category\Category;
 use Kondrashov\Cashback\App\Entity\Category\CategoryCollection;
 use Kondrashov\Cashback\Kernel\Factory\AbstractEntityFactory;
 use Kondrashov\Cashback\Kernel\Entity\AbstractEntity;
-use Kondrashov\Cashback\Kernel\Entity\EntityCollection;
+use Kondrashov\Cashback\Kernel\Entity\AbstractEntityCollection;
 
 class CategoryFactory extends AbstractEntityFactory
 {
@@ -15,7 +15,7 @@ class CategoryFactory extends AbstractEntityFactory
 		return new Category();
 	}
 
-	public function createEmptyCollection(): EntityCollection
+	public function createEmptyCollection(): AbstractEntityCollection
 	{
 		return new CategoryCollection();
 	}

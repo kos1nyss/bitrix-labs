@@ -9,7 +9,7 @@ class Bank extends AbstractEntity
 {
 	private ?string $name;
 
-	private CategoryCollection $monthCategoryCollection;
+	private CategoryCollection $monthCategories;
 
 	public function setName(string $name): self
 	{
@@ -18,9 +18,9 @@ class Bank extends AbstractEntity
 		return $this;
 	}
 
-	public function setMonthCategories(CategoryCollection $monthCategoryCollection): self
+	public function setMonthCategories(CategoryCollection $monthCategories): self
 	{
-		$this->monthCategoryCollection = $monthCategoryCollection;
+		$this->monthCategories = $monthCategories;
 
 		return $this;
 	}
@@ -29,7 +29,7 @@ class Bank extends AbstractEntity
 	{
 		return [
 			'name' => $this->getName(),
-			'monthCategoryCollection' => $this->monthCategoryCollection->toArray(),
+			'monthCategories' => $this->monthCategories->toArray(),
 		];
 	}
 
@@ -40,6 +40,6 @@ class Bank extends AbstractEntity
 
 	public function getMonthCategories(): CategoryCollection
 	{
-		return $this->monthCategoryCollection;
+		return $this->monthCategories;
 	}
 }
