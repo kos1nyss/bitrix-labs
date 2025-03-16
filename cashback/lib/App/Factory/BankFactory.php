@@ -6,7 +6,7 @@ use Kondrashov\Cashback\Kernel\Entity\AbstractEntity;
 use Kondrashov\Cashback\Kernel\Entity\AbstractEntityCollection;
 use Kondrashov\Cashback\Kernel\Factory\AbstractEntityFactory;
 use Kondrashov\Cashback\App\Entity\Bank\Bank;
-use Kondrashov\Cashback\App\Entity\Bank\BankCollectionAbstract;
+use Kondrashov\Cashback\App\Entity\Bank\BankCollection;
 
 class BankFactory extends AbstractEntityFactory
 {
@@ -17,6 +17,6 @@ class BankFactory extends AbstractEntityFactory
 
 	public function createEmptyCollection(): AbstractEntityCollection
 	{
-		return new BankCollectionAbstract();
+		return new BankCollection();
 	}
 }
