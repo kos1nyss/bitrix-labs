@@ -18,7 +18,7 @@ class Bank extends AbstractEntity
 		return $this;
 	}
 
-	public function setMonthCategoryCollection(CategoryCollection $monthCategoryCollection): self
+	public function setMonthCategories(CategoryCollection $monthCategoryCollection): self
 	{
 		$this->monthCategoryCollection = $monthCategoryCollection;
 
@@ -38,7 +38,7 @@ class Bank extends AbstractEntity
 		return $this->name;
 	}
 
-	public function getMonthCategoryCollection(): CategoryCollection
+	public function getMonthCategories(): CategoryCollection
 	{
 		return $this->monthCategoryCollection;
 	}

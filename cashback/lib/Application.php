@@ -20,7 +20,7 @@ class Application
 
 		$user =
 			(new User())
-				->setPriorityCategoryCollection(
+				->setPriorityCategories(
 					new CategoryCollection(
 						[
 							$productsCategory,
@@ -31,7 +31,7 @@ class Application
 		$bank =
 			(new Bank())
 				->setName('Альфа-Банк')
-				->setMonthCategoryCollection(
+				->setMonthCategories(
 					(
 						new CategoryCollection(
 							[
@@ -49,8 +49,8 @@ class Application
 		$filteredCategories =
 			$categoryFilter
 				->filterByPriority(
-					$bank->getMonthCategoryCollection(),
-					$user->getPriorityCategoryCollection(),
+					$bank->getMonthCategories(),
+					$user->getPriorityCategories(),
 					3,
 				)
 		;

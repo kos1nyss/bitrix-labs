@@ -9,7 +9,7 @@ class User extends AbstractEntity
 {
 	private CategoryCollection $priorityCategoryCollection;
 
-	public function setPriorityCategoryCollection(CategoryCollection $categoryCollection): self
+	public function setPriorityCategories(CategoryCollection $categoryCollection): self
 	{
 		$this->priorityCategoryCollection = $categoryCollection;
 
@@ -19,11 +19,11 @@ class User extends AbstractEntity
 	public function toArray(): array
 	{
 		return [
-			'priorityCategory' => $this->getPriorityCategoryCollection()->toArray(),
+			'priorityCategory' => $this->getPriorityCategories()->toArray(),
 		];
 	}
 
-	public function getPriorityCategoryCollection(): CategoryCollection
+	public function getPriorityCategories(): CategoryCollection
 	{
 		return $this->priorityCategoryCollection;
 	}
